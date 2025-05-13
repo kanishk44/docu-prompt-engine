@@ -6,7 +6,7 @@ A full-stack application that processes documents (PDFs, TIFFs), extracts their 
 
 - Document upload and processing (PDF, TIFF, PNG, JPG)
 - OCR text extraction using Tesseract.js
-- AI-powered key-value pair extraction
+- AI-powered key-value pair extraction using Google's Gemini
 - Batch processing support
 - Modern UI with drag-and-drop file upload
 - Document history and results viewing
@@ -15,7 +15,7 @@ A full-stack application that processes documents (PDFs, TIFFs), extracts their 
 
 - Node.js (v14 or higher)
 - MongoDB
-- OpenAI API key
+- Google Cloud API key with Gemini API enabled
 
 ## Setup
 
@@ -38,7 +38,7 @@ npm install
 ```
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/docu-prompt-engine
-OPENAI_API_KEY=your_openai_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
 4. Set up the frontend:
@@ -69,6 +69,14 @@ The application will be available at:
 - Frontend: http://localhost:5173
 - Backend: http://localhost:5000
 
+## Getting a Gemini API Key
+
+1. Go to the [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click on "Get API key" in the API section
+4. Create a new API key or use an existing one
+5. Copy the API key and add it to your `.env` file
+
 ## Usage
 
 1. Open the application in your browser
@@ -76,7 +84,7 @@ The application will be available at:
 3. The application will:
    - Extract text using OCR
    - Generate an AI prompt
-   - Extract key-value pairs
+   - Extract key-value pairs using Gemini
    - Save the results
 4. View processed documents in the Documents page
 5. Use batch upload for multiple files of the same type
@@ -96,7 +104,8 @@ The application will be available at:
   - Express.js
   - MongoDB
   - Tesseract.js
-  - OpenAI API
+  - Google Gemini API
+  - pdf-parse
 
 ## License
 
