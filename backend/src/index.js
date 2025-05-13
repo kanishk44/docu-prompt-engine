@@ -34,6 +34,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Something went wrong!" });
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 // Connect to MongoDB
 mongoose
   .connect(
